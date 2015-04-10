@@ -1315,6 +1315,10 @@ ifdef INSTALLED_2NDBOOTLOADER_TARGET
 	$(hide) $(ACP) \
 		$(INSTALLED_2NDBOOTLOADER_TARGET) $(zip_root)/RECOVERY/second
 endif
+#ifdef INSTALLED_BOOTSCRIPT_TARGET
+#	$(hide) $(ACP) \
+#		$(INSTALLED_BOOTSCRIPT_TARGET) $(zip_root)/RECOVERY/bootscript
+#endif
 ifdef BOARD_KERNEL_CMDLINE
 	$(hide) echo "$(BOARD_KERNEL_CMDLINE)" > $(zip_root)/RECOVERY/cmdline
 endif
@@ -1345,6 +1349,10 @@ endif
 ifdef INSTALLED_2NDBOOTLOADER_TARGET
 	$(hide) $(ACP) \
 		$(INSTALLED_2NDBOOTLOADER_TARGET) $(zip_root)/BOOT/second
+endif
+ifdef INSTALLED_BOOTSCRIPT_TARGET
+	$(hide) $(ACP) \
+		$(INSTALLED_BOOTSCRIPT_TARGET) $(zip_root)/BOOT/bootscript
 endif
 ifdef BOARD_KERNEL_CMDLINE
 	$(hide) echo "$(BOARD_KERNEL_CMDLINE)" > $(zip_root)/BOOT/cmdline
